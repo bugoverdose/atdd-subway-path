@@ -51,11 +51,10 @@ public class Path {
     }
 
     public int calculateFare(List<LineExtraFare> extraFares, int age) {
-        Fare fare = new Fare();
-        fare = fare.applyDistanceOverFarePolicies(getDistance());
-        fare = fare.applyMaximumLineExtraFare(extraFares);
-        fare = fare.applyAgeDiscountPolicy(age);
-
-        return fare.toInt();
+        return new Fare()
+                .applyDistanceOverFarePolicies(getDistance())
+                .applyMaximumLineExtraFare(extraFares)
+                .applyAgeDiscountPolicy(age)
+                .toInt();
     }
 }
