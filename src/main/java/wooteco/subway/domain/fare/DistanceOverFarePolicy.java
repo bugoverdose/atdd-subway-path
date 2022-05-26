@@ -31,7 +31,7 @@ public enum DistanceOverFarePolicy {
     }
 
     private int calculateOverFare(int overDistance, int limit) {
-        double overFareDigit = Math.ceil((overDistance - 1) / limit) + 1;
-        return (int) (overFareDigit * OVER_FARE_AMOUNT);
+        int overFareDigit = ((overDistance - 1) / limit) + 1;
+        return (overFareDigit * OVER_FARE_AMOUNT);
     }
 }
